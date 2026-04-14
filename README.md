@@ -82,7 +82,7 @@ SOFTWARE.
 [repo-badge]: https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg
 [repo-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fcorgan2222%2Fhassio-addons_repository
 
-[addon-emqx]: https://github.com/corgan2222/addon-emqx/tree/v0.8.3
+[addon-emqx]: https://github.com/corgan2222/addon-emqx/releases/latest
 [addon-doc-emqx]: https://github.com/corgan2222/addon-emqx/blob/main/README.md
 [emqx-issue]: https://github.com/corgan2222/addon-emqx/issues
 [emqx-version-shield]: https://img.shields.io/github/v/release/corgan2222/addon-emqx?label=addon
