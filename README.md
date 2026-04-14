@@ -89,10 +89,10 @@ SOFTWARE.
 [emqx-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [emqx-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 
-[addon-grafana]: https://github.com/corgan2222/addon-grafana/tree/v12.1.0
-[addon-doc-grafana]: https://github.com/corgan2222/addon-grafana/blob/v12.1.0/README.md
+[addon-grafana]: https://github.com/corgan2222/addon-grafana/tree/v12.4.3.1
+[addon-doc-grafana]: https://github.com/corgan2222/addon-grafana/blob/v12.4.3.1/README.md
 [grafana-issue]: https://github.com/corgan2222/addon-grafana/issues
-[grafana-version-shield]: https://img.shields.io/badge/version-v12.1.0-blue.svg
+[grafana-version-shield]: https://img.shields.io/badge/version-v12.4.3.1-blue.svg
 [grafana-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [grafana-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 

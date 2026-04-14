@@ -36,8 +36,14 @@ jobs:
           GH_TOKEN: ${{ secrets.UPDATER_TOKEN }}
           VERSION: ${{ github.event.client_payload.version }}
           REPOSITORY: ${{ github.event.client_payload.repository }}
-          ADDON: ${{ github.event.client_payload.addon }}
+          ADDON: ${{ github.event.client_payload.app }}
         run: |
+          # Skip if VERSION is a git SHA (edge builds) rather than a release tag
+          if [[ ! "${VERSION}" =~ ^v[0-9] ]]; then
+            echo "Version '${VERSION}' is not a release tag, skipping changelog."
+            exit 0
+          fi
+
           CHANGELOG="${ADDON}/CHANGELOG.md"
           DATE=$(date +%Y-%m-%d)
 
@@ -55,7 +61,7 @@ jobs:
       - name: Commit changelog
         env:
           VERSION: ${{ github.event.client_payload.version }}
-          ADDON: ${{ github.event.client_payload.addon }}
+          ADDON: ${{ github.event.client_payload.app }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -76,10 +82,10 @@ jobs:
           nodetail: true
           username: ${{ github.event.client_payload.name }}
           avatar_url: |
-            https://raw.githubusercontent.com/${{ github.repository }}/master/${{ github.event.client_payload.addon }}/icon.png
+            https://raw.githubusercontent.com/${{ github.repository }}/master/${{ github.event.client_payload.app }}/icon.png
           title: ":arrow_up: ${{ github.event.client_payload.name }} ${{ github.event.client_payload.version }}"
           image: |
-            https://raw.githubusercontent.com/${{ github.repository }}/master/${{ github.event.client_payload.addon }}/logo.png
+            https://raw.githubusercontent.com/${{ github.repository }}/master/${{ github.event.client_payload.app }}/logo.png
           description: |
             A new version of the ${{ github.event.client_payload.name }} app has been published.
 
