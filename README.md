@@ -109,7 +109,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 [addon-emqx]: https://github.com/corgan2222/addon-emqx/tree/v0.8.2
-[addon-doc-emqx]: https://github.com/corgan2222/addon-emqx/blob/v0.8.2/README.md
+[addon-doc-emqx]: https://github.com/corgan2222/addon-emqx/blob/main/README.md
 [emqx-issue]: https://github.com/corgan2222/addon-emqx/issues
 [emqx-version-shield]: https://img.shields.io/badge/version-v0.8.2-blue.svg
 [emqx-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
