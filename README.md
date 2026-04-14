@@ -1,33 +1,21 @@
-# Home Assistant Community Apps
+# Home Assistant Community App by corgan2222
 
 ![Project Stage][project-stage-shield]
 ![Maintenance][maintenance-shield]
 [![License][license-shield]](LICENSE.md)
 
-[![Discord][discord-shield]][discord]
-[![Community Forum][forum-shield]][forum]
-
 ## About
 
-Home Assistant allows anyone to create app repositories to share their
-apps for Home Assistant easily. This repository is one of those repositories,
-providing extra Home Assistant apps for your installation.
-
-The primary goal of this project is to provide you (as a Home Assistant user)
-with additional, high quality, apps that allow you to take your automated
-home to the next level.
+A personal Home Assistant add-on repository based on the
+[Home Assistant Community Apps](https://github.com/hassio-addons/repository) project.
 
 ## Installation
 
-In general, there is no need to install this repository on your
-Home Assistant instance. It is activated and added by Home Assistant
-by default.
+Add this repository to your Home Assistant instance via the add-on store:
 
-However, if the repository is missing on your setup, adding this apps
-repository to your Home Assistant instance is pretty easy. In the
-Home Assistant app store, a possibility to add a repository is provided.
+[![Add repository to Home Assistant][repo-badge]][repo-url]
 
-Use the following URL to add this repository:
+Or manually add this URL:
 
 ```txt
 https://github.com/corgan2222/hassio-addons_repository
@@ -35,71 +23,36 @@ https://github.com/corgan2222/hassio-addons_repository
 
 ## Apps provided by this repository
 
-### &#10003; [EMQX][addon-emqx]
+### &#10003; [EMQX Enterprise][addon-emqx]
 
-![Latest Version][emqx-version-shield]
-![Supports armhf Architecture][emqx-armhf-shield]
-![Supports armv7 Architecture][emqx-armv7-shield]
+![Addon Version][emqx-version-shield]
+![EMQX Version][emqx-app-version-shield]
 ![Supports aarch64 Architecture][emqx-aarch64-shield]
 ![Supports amd64 Architecture][emqx-amd64-shield]
-![Supports i386 Architecture][emqx-i386-shield]
 
-The most scalable open-source MQTT broker for IoT. Enterprise Version.
+The most scalable open-source MQTT broker for IoT. Enterprise Edition — an alternative
+to the Mosquitto add-on with Flow Designer, Rule Engine, and advanced access control.
 
-[:books: EMQX app documentation][addon-doc-emqx]
+[:books: EMQX Enterprise app documentation][addon-doc-emqx]
 
-### &#10003; [Grafana Enterprise][addon-grafana]
+### &#10003; [Grafana][addon-grafana]
 
 ![Latest Version][grafana-version-shield]
-![Supports armhf Architecture][grafana-armhf-shield]
-![Supports armv7 Architecture][grafana-armv7-shield]
 ![Supports aarch64 Architecture][grafana-aarch64-shield]
 ![Supports amd64 Architecture][grafana-amd64-shield]
-![Supports i386 Architecture][grafana-i386-shield]
 
-The open platform for beautiful analytics and monitoring. Enterprise Edition.
+The open platform for beautiful analytics and monitoring
 
-[:books: Grafana Enterprise app documentation][addon-doc-grafana]
-
-## Releases
-
-Releases are based on [Semantic Versioning][semver], and use the format
-of ``MAJOR.MINOR.PATCH``. In a nutshell, the version will be incremented
-based on the following:
-
-- ``MAJOR``: Incompatible or major changes.
-- ``MINOR``: Backwards-compatible new features and enhancements.
-- ``PATCH``: Backwards-compatible bugfixes and package updates.
+[:books: Grafana app documentation][addon-doc-grafana]
 
 ## Support
 
-Got questions?
+Open an issue in the relevant repository:
 
-You have several options to get them answered:
+- [Open an issue for the app: EMQX Enterprise][emqx-issue]
+- [Open an issue for the app: Grafana][grafana-issue]
 
-- The Home Assistant Community Apps [Discord Chat Server][discord]
-- The Home Assistant [Community Forum][forum].
-- The Home Assistant [Discord Chat Server][discord-ha].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
-
-You could also open an issue here on GitHub. Note, we use a separate
-GitHub repository for each app. Please ensure you are creating the issue
-on the correct GitHub repository matching the app.
-
-- [Open an issue for the app: EMQX][emqx-issue]
-- [Open an issue for the app: Grafana Enterprise][grafana-issue]
-
-For a general repository issue or app ideas [open an issue here][issue]
-
-## Adding a new app
-
-We are currently not accepting third party apps to this repository.
-
-For questions, please contact [Franck Nijhof][frenck]:
-
-- Drop him an email: opensource@frenck.dev
-- Chat with him on [Discord Chat][discord]
-- Message him via the forums: [frenck][forum-frenck]
+For a general repository issue [open an issue here][issue]
 
 ## License
 
@@ -125,38 +78,25 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+[repo-badge]: https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg
+[repo-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fcorgan2222%2Fhassio-addons_repository
+
 [addon-emqx]: https://github.com/corgan2222/addon-emqx/tree/v0.8.3
-[addon-doc-emqx]: https://github.com/corgan2222/addon-emqx/blob/v0.8.3/README.md
+[addon-doc-emqx]: https://github.com/corgan2222/addon-emqx/blob/main/README.md
 [emqx-issue]: https://github.com/corgan2222/addon-emqx/issues
-[emqx-version-shield]: https://img.shields.io/badge/version-v0.8.3-blue.svg
+[emqx-version-shield]: https://img.shields.io/github/v/release/corgan2222/addon-emqx?label=addon
+[emqx-app-version-shield]: https://img.shields.io/badge/EMQX-e5.10.3-brightgreen.svg
 [emqx-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [emqx-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[emqx-armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
-[emqx-armv7-shield]: https://img.shields.io/badge/armv7-no-red.svg
-[emqx-i386-shield]: https://img.shields.io/badge/i386-no-red.svg
-[addon-grafana]: https://github.com/corgan2222/addon-grafana/tree/v12.4.3
-[addon-doc-grafana]: https://github.com/corgan2222/addon-grafana/blob/v12.4.3/README.md
+
+[addon-grafana]: https://github.com/corgan2222/addon-grafana/tree/v12.1.0
+[addon-doc-grafana]: https://github.com/corgan2222/addon-grafana/blob/v12.1.0/README.md
 [grafana-issue]: https://github.com/corgan2222/addon-grafana/issues
-[grafana-version-shield]: https://img.shields.io/badge/version-v12.4.3-blue.svg
+[grafana-version-shield]: https://img.shields.io/badge/version-v12.1.0-blue.svg
 [grafana-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [grafana-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[grafana-armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
-[grafana-armv7-shield]: https://img.shields.io/badge/armv7-no-red.svg
-[grafana-i386-shield]: https://img.shields.io/badge/i386-no-red.svg
-[awesome-shield]: https://img.shields.io/badge/awesome%3F-yes-brightgreen.svg
-[awesome]: https://awesome-ha.com
-[discord-ha]: https://discord.gg/c5DvZ4e
-[discord-shield]: https://img.shields.io/discord/478094546522079232.svg
-[discord]: https://discord.me/hassioaddons
-[forum-frenck]: https://community.home-assistant.io/u/frenck/?u=frenck
-[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io?u=frenck
-[frenck]: https://github.com/frenck
-[gitlabci-shield]: https://gitlab.com/corgan2222/hassio-addons_repository/badges/master/pipeline.svg
-[gitlabci]: https://gitlab.com/corgan2222/hassio-addons_repository/pipelines
+
 [issue]: https://github.com/corgan2222/hassio-addons_repository/issues
 [license-shield]: https://img.shields.io/github/license/corgan2222/hassio-addons_repository.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[reddit]: https://reddit.com/r/homeassistant
-[semver]: http://semver.org/spec/v2.0.0.html
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
