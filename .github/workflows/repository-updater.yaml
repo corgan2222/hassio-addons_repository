@@ -15,6 +15,54 @@ jobs:
     secrets:
       UPDATER_TOKEN: ${{ secrets.UPDATER_TOKEN }}
 
+  changelog:
+    name: Update changelog
+    needs: workflows
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          token: ${{ secrets.UPDATER_TOKEN }}
+          ref: master
+
+      - name: Pull latest (updater may have pushed a commit)
+        run: git pull --rebase
+
+      - name: Prepend changelog entry
+        env:
+          GH_TOKEN: ${{ secrets.UPDATER_TOKEN }}
+          VERSION: ${{ github.event.client_payload.version }}
+          REPOSITORY: ${{ github.event.client_payload.repository }}
+          ADDON: ${{ github.event.client_payload.addon }}
+        run: |
+          CHANGELOG="${ADDON}/CHANGELOG.md"
+          DATE=$(date +%Y-%m-%d)
+
+          # Fetch release notes from the addon repo
+          NOTES=$(gh api "repos/${REPOSITORY}/releases/tags/${VERSION}" --jq '.body // ""')
+
+          # Build new entry
+          ENTRY="## ${VERSION} (${DATE})\n\n${NOTES}\n\n"
+
+          # Prepend entry to existing changelog
+          TMP=$(mktemp)
+          printf "%s\n\n%s" "$(printf "$ENTRY")" "$(cat "$CHANGELOG")" > "$TMP"
+          mv "$TMP" "$CHANGELOG"
+
+      - name: Commit changelog
+        env:
+          VERSION: ${{ github.event.client_payload.version }}
+          ADDON: ${{ github.event.client_payload.addon }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "${ADDON}/CHANGELOG.md"
+          git diff --staged --quiet || git commit -m ":books: Update changelog for ${VERSION}"
+          git push
+
   announce:
     name: Announce app update
     needs: workflows
