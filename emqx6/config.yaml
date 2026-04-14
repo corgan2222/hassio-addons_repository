@@ -1,6 +1,6 @@
 ---
 name: EMQX6 Enterprise
-version: dev
+version: 0.0.0
 slug: emqx6
 description: EMQX Enterprise v6 — the most scalable open-source MQTT broker for IoT. An alternative for the Mosquitto add-on.
 url: https://github.com/corgan2222/addon-emqx6
