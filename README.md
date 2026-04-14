@@ -84,7 +84,7 @@ SOFTWARE.
 [addon-emqx]: https://github.com/corgan2222/addon-emqx/tree/v0.8.3
 [addon-doc-emqx]: https://github.com/corgan2222/addon-emqx/blob/main/README.md
 [emqx-issue]: https://github.com/corgan2222/addon-emqx/issues
-[emqx-version-shield]: https://img.shields.io/badge/addon-v0.8.3-blue.svg
+[emqx-version-shield]: https://img.shields.io/github/v/release/corgan2222/addon-emqx?label=addon
 [emqx-app-version-shield]: https://img.shields.io/badge/EMQX-e5.10.3-brightgreen.svg
 [emqx-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [emqx-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

@@ -28,6 +28,6 @@ self-hosted environment. Maintained by [Stefan Knaak (corgan2222)][corgan2222].
 [emqx]: https://www.emqx.io/
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v0.8.3-blue.svg
-[release]: https://github.com/corgan2222/addon-emqx/tree/v0.8.3
+[release-shield]: https://img.shields.io/github/v/release/corgan2222/addon-emqx
+[release]: https://github.com/corgan2222/addon-emqx/releases/latest
 [screenshot]: https://github.com/corgan2222/addon-emqx/raw/main/images/screenshot.png
