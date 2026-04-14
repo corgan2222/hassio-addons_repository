@@ -5,6 +5,10 @@ apps:
     repository: corgan2222/addon-emqx
     target: emqx
     image: ghcr.io/corgan2222/emqx/{arch}
+  emqx6:
+    repository: corgan2222/addon-emqx6
+    target: emqx6
+    image: ghcr.io/corgan2222/emqx6/{arch}
   grafana:
     repository: corgan2222/addon-grafana
     target: grafana

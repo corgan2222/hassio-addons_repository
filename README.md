@@ -35,6 +35,16 @@ to the Mosquitto add-on with Flow Designer, Rule Engine, and advanced access con
 
 [:books: EMQX Enterprise app documentation][addon-doc-emqx]
 
+### &#10003; [EMQX6 Enterprise][addon-emqx6]
+
+![Addon Version][emqx6-version-shield]
+![Supports aarch64 Architecture][emqx6-aarch64-shield]
+![Supports amd64 Architecture][emqx6-amd64-shield]
+
+EMQX Enterprise v6 — the most scalable open-source MQTT broker for IoT.
+
+[:books: EMQX6 Enterprise app documentation][addon-doc-emqx6]
+
 ### &#10003; [Grafana Enterprise][addon-grafana]
 
 ![Latest Version][grafana-version-shield]
@@ -50,6 +60,7 @@ The open platform for beautiful analytics and monitoring
 Open an issue in the relevant repository:
 
 - [Open an issue for the app: EMQX Enterprise][emqx-issue]
+- [Open an issue for the app: EMQX6 Enterprise][emqx6-issue]
 - [Open an issue for the app: Grafana][grafana-issue]
 
 For a general repository issue [open an issue here][issue]
@@ -89,6 +100,13 @@ SOFTWARE.
 [emqx-app-version-shield]: https://img.shields.io/badge/EMQX-e5.10.3-brightgreen.svg
 [emqx-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [emqx-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+
+[addon-emqx6]: https://github.com/corgan2222/addon-emqx6/releases/latest
+[addon-doc-emqx6]: https://github.com/corgan2222/addon-emqx6/blob/main/emqx6/DOCS.md
+[emqx6-issue]: https://github.com/corgan2222/addon-emqx6/issues
+[emqx6-version-shield]: https://img.shields.io/github/v/release/corgan2222/addon-emqx6?label=addon
+[emqx6-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
+[emqx6-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 
 [addon-grafana]: https://github.com/corgan2222/addon-grafana/releases/latest
 [addon-doc-grafana]: https://github.com/corgan2222/addon-grafana/blob/main/grafana/DOCS.md
