@@ -9,10 +9,6 @@ apps:
     repository: hassio-addons/app-example
     target: example
     image: ghcr.io/hassio-addons/example
-  grafana:
-    repository: corgan2222/addon-grafana
-    target: grafana
-    image: ghcr.io/corgan2222/grafana/{arch}
   influxdb:
     repository: hassio-addons/addon-influxdb
     target: influxdb
