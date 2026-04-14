@@ -1,5 +1,5 @@
 name: EMQX
-version: 0.8.2
+version: 0.8.3
 slug: emqx
 description: The most scalable open-source MQTT broker for IoT. Enterprise Version.
 url: https://github.com/corgan2222/addon-emqx

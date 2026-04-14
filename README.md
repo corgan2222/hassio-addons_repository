@@ -13,22 +13,27 @@ A personal Home Assistant add-on repository based on the
 
 Add this repository to your Home Assistant instance via the add-on store:
 
+[![Add repository to Home Assistant][repo-badge]][repo-url]
+
+Or manually add this URL:
+
 ```txt
 https://github.com/corgan2222/hassio-addons_repository
 ```
 
 ## Apps provided by this repository
 
-### &#10003; [EMQX][addon-emqx]
+### &#10003; [EMQX Enterprise][addon-emqx]
 
-![Latest Version][emqx-version-shield]
+![Addon Version][emqx-version-shield]
+![EMQX Version][emqx-app-version-shield]
 ![Supports aarch64 Architecture][emqx-aarch64-shield]
 ![Supports amd64 Architecture][emqx-amd64-shield]
 
-The most scalable open-source MQTT broker for IoT. An alternative for the Mosquitto add-on.
-Change by Corgan: Enterprise Version
+The most scalable open-source MQTT broker for IoT. Enterprise Edition — an alternative
+to the Mosquitto add-on with Flow Designer, Rule Engine, and advanced access control.
 
-[:books: EMQX app documentation][addon-doc-emqx]
+[:books: EMQX Enterprise app documentation][addon-doc-emqx]
 
 ### &#10003; [Grafana][addon-grafana]
 
@@ -44,7 +49,7 @@ The open platform for beautiful analytics and monitoring
 
 Open an issue in the relevant repository:
 
-- [Open an issue for the app: EMQX][emqx-issue]
+- [Open an issue for the app: EMQX Enterprise][emqx-issue]
 - [Open an issue for the app: Grafana][grafana-issue]
 
 For a general repository issue [open an issue here][issue]
@@ -73,10 +78,14 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+[repo-badge]: https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg
+[repo-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fcorgan2222%2Fhassio-addons_repository
+
 [addon-emqx]: https://github.com/corgan2222/addon-emqx/tree/v0.8.3
 [addon-doc-emqx]: https://github.com/corgan2222/addon-emqx/blob/main/README.md
 [emqx-issue]: https://github.com/corgan2222/addon-emqx/issues
-[emqx-version-shield]: https://img.shields.io/badge/version-v0.8.3-blue.svg
+[emqx-version-shield]: https://img.shields.io/badge/addon-v0.8.3-blue.svg
+[emqx-app-version-shield]: https://img.shields.io/badge/EMQX-e5.10.3-brightgreen.svg
 [emqx-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [emqx-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 
