@@ -5,16 +5,4 @@ apps:
     repository: corgan2222/addon-emqx
     target: emqx
     image: ghcr.io/corgan2222/emqx/{arch}
-  example:
-    repository: hassio-addons/app-example
-    target: example
-    image: ghcr.io/hassio-addons/example
-  influxdb:
-    repository: hassio-addons/addon-influxdb
-    target: influxdb
-    image: ghcr.io/hassio-addons/influxdb/{arch}
-  log-viewer:
-    repository: hassio-addons/addon-log-viewer
-    target: log-viewer
-    image: ghcr.io/hassio-addons/log-viewer/{arch}
 
