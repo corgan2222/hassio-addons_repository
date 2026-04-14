@@ -1,191 +1,24 @@
 ---
 channel: stable
 apps:
-  adguard:
-    repository: hassio-addons/app-adguard-home
-    target: adguard
-    image: ghcr.io/hassio-addons/adguard
-  aircast:
-    repository: hassio-addons/app-aircast
-    target: aircast
-    image: ghcr.io/hassio-addons/aircast
-  airsonos:
-    repository: hassio-addons/app-airsonos
-    target: airsonos
-    image: ghcr.io/hassio-addons/airsonos
-  appdaemon:
-    repository: hassio-addons/app-appdaemon
-    target: appdaemon
-    image: ghcr.io/hassio-addons/appdaemon
-  bazarr:
-    repository: hassio-addons/addon-bazarr
-    target: bazarr
-    image: ghcr.io/hassio-addons/bazarr/{arch}
-  bitwarden:
-    repository: hassio-addons/app-vaultwarden
-    target: vaultwarden
-    image: ghcr.io/hassio-addons/bitwarden
-  bookstack:
-    repository: hassio-addons/addon-bookstack
-    target: bookstack
-    image: ghcr.io/hassio-addons/bookstack/{arch}
-  chrony:
-    repository: hassio-addons/addon-chrony
-    target: chrony
-    image: ghcr.io/hassio-addons/chrony/{arch}
   emqx:
-    repository: hassio-addons/addon-emqx
+    repository: corgan2222/addon-emqx
     target: emqx
-    image: ghcr.io/hassio-addons/emqx/{arch}
+    image: ghcr.io/corgan2222/emqx/{arch}
   example:
     repository: hassio-addons/app-example
     target: example
     image: ghcr.io/hassio-addons/example
-  foldingathome:
-    repository: hassio-addons/addon-foldingathome
-    target: foldingathome
-    image: ghcr.io/hassio-addons/foldingathome/{arch}
-  ftp:
-    repository: hassio-addons/addon-ftp
-    target: ftp
-    image: ghcr.io/hassio-addons/ftp/{arch}
-  glances:
-    repository: hassio-addons/addon-glances
-    target: glances
-    image: ghcr.io/hassio-addons/glances/{arch}
   grafana:
-    repository: hassio-addons/addon-grafana
+    repository: corgan2222/addon-grafana
     target: grafana
-    image: ghcr.io/hassio-addons/grafana/{arch}
-  grocy:
-    repository: hassio-addons/app-grocy
-    target: grocy
-    image: ghcr.io/hassio-addons/grocy
+    image: ghcr.io/corgan2222/grafana/{arch}
   influxdb:
     repository: hassio-addons/addon-influxdb
     target: influxdb
     image: ghcr.io/hassio-addons/influxdb/{arch}
-  jupyterlab:
-    repository: hassio-addons/addon-jupyterlab
-    target: jupyterlab
-    image: ghcr.io/hassio-addons/jupyterlab/{arch}
-  lidarr:
-    repository: hassio-addons/addon-lidarr
-    target: lidarr
-    image: ghcr.io/hassio-addons/lidarr/{arch}
   log-viewer:
     repository: hassio-addons/addon-log-viewer
     target: log-viewer
     image: ghcr.io/hassio-addons/log-viewer/{arch}
-  motioneye:
-    repository: hassio-addons/addon-motioneye
-    target: motioneye
-    image: ghcr.io/hassio-addons/motioneye/{arch}
-  mqtt-io:
-    repository: hassio-addons/addon-mqtt-io
-    target: mqtt-io
-    image: ghcr.io/hassio-addons/mqtt-io/{arch}
-  node-red:
-    repository: hassio-addons/app-node-red
-    target: node-red
-    image: ghcr.io/hassio-addons/node-red
-  nginxproxymanager:
-    repository: hassio-addons/addon-nginx-proxy-manager
-    target: proxy-manager
-    image: ghcr.io/hassio-addons/nginxproxymanager/{arch}
-  nut:
-    repository: hassio-addons/app-nut
-    target: nut
-    image: ghcr.io/hassio-addons/nut
-  overseerr:
-    repository: hassio-addons/addon-overseerr
-    target: overseerr
-    image: ghcr.io/hassio-addons/overseerr/{arch}
-  phpmyadmin:
-    repository: hassio-addons/addon-phpmyadmin
-    target: phpmyadmin
-    image: ghcr.io/hassio-addons/phpmyadmin/{arch}
-  plex:
-    repository: hassio-addons/app-plex
-    target: plex
-    image: ghcr.io/hassio-addons/plex
-  radarr:
-    repository: hassio-addons/app-radarr
-    target: radarr
-    image: ghcr.io/hassio-addons/radarr
-  sonarr:
-    repository: hassio-addons/app-sonarr
-    target: sonarr
-    image: ghcr.io/hassio-addons/sonarr
-  spotify:
-    repository: hassio-addons/addon-spotify-connect
-    target: spotify
-    image: ghcr.io/hassio-addons/spotify/{arch}
-  prowlarr:
-    repository: hassio-addons/addon-prowlarr
-    target: prowlarr
-    image: ghcr.io/hassio-addons/prowlarr/{arch}
-  tailscale:
-    repository: hassio-addons/app-tailscale
-    target: tailscale
-    image: ghcr.io/hassio-addons/tailscale
-  tasmoadmin:
-    repository: hassio-addons/addon-tasmoadmin
-    target: tasmoadmin
-    image: ghcr.io/hassio-addons/tasmoadmin/{arch}
-  tautulli:
-    repository: hassio-addons/addon-tautulli
-    target: tautulli
-    image: ghcr.io/hassio-addons/tautulli/{arch}
-  thelounge:
-    repository: hassio-addons/addon-thelounge
-    target: thelounge
-    image: ghcr.io/hassio-addons/thelounge/{arch}
-  sabnzbd:
-    repository: hassio-addons/app-sabnzbd
-    target: sabnzbd
-    image: ghcr.io/hassio-addons/sabnzbd
-  ssh:
-    repository: hassio-addons/app-ssh
-    target: ssh
-    image: ghcr.io/hassio-addons/ssh
-  sqlite-web:
-    repository: hassio-addons/app-sqlite-web
-    target: sqlite-web
-    image: ghcr.io/hassio-addons/sqlite-web
-  tor:
-    repository: hassio-addons/addon-tor
-    target: tor
-    image: ghcr.io/hassio-addons/tor/{arch}
-  traccar:
-    repository: hassio-addons/addon-traccar
-    target: traccar
-    image: ghcr.io/hassio-addons/traccar/{arch}
-  unifi:
-    repository: hassio-addons/app-unifi
-    target: unifi
-    image: ghcr.io/hassio-addons/unifi
-  uptime-kuma:
-    repository: hassio-addons/app-uptime-kuma
-    target: uptime-kuma
-    image: ghcr.io/hassio-addons/uptime-kuma
-  vscode:
-    repository: hassio-addons/addon-vscode
-    target: vscode
-    image: ghcr.io/hassio-addons/vscode/{arch}
-  whisparr:
-    repository: hassio-addons/addon-whisparr
-    target: whisparr
-    image: ghcr.io/hassio-addons/whisparr/{arch}
-  wireguard:
-    repository: hassio-addons/addon-wireguard
-    target: wireguard
-    image: ghcr.io/hassio-addons/wireguard/{arch}
-  zerotier:
-    repository: hassio-addons/app-zerotier
-    target: zerotier
-    image: ghcr.io/hassio-addons/zerotier
-  zwave-js-ui:
-    repository: hassio-addons/app-zwave-js-ui
-    target: zwave-js-ui
-    image: ghcr.io/hassio-addons/zwave-js-ui
+
