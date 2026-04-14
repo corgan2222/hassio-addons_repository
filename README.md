@@ -35,7 +35,7 @@ to the Mosquitto add-on with Flow Designer, Rule Engine, and advanced access con
 
 [:books: EMQX Enterprise app documentation][addon-doc-emqx]
 
-### &#10003; [Grafana][addon-grafana]
+### &#10003; [Grafana Enterprise][addon-grafana]
 
 ![Latest Version][grafana-version-shield]
 ![Supports aarch64 Architecture][grafana-aarch64-shield]
@@ -59,6 +59,7 @@ For a general repository issue [open an issue here][issue]
 MIT License
 
 Copyright (c) 2017-2026 Franck Nijhof
+Copyright (c) 2026 Stefan Knaak
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
