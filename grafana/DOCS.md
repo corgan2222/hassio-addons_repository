@@ -115,10 +115,10 @@ Grafana CLI, or any application that cannot authenticate through the HA ingress.
 
 **You must choose one access mode — you cannot use both simultaneously:**
 
-| Mode | Direct port (`http://IP:3000`) | HA Sidebar (Ingress) |
-|---|---|---|
-| Direct | ✓ | ✗ |
-| Ingress | ✗ (redirects to subpath) | ✓ |
+| Mode    | Direct port (`http://IP:3000`)   | HA Sidebar (Ingress) |
+| ------- | -------------------------------- | -------------------- |
+| Direct  | ✓                                | ✗                    |
+| Ingress | ✗ (redirects to subpath)         | ✓                    |
 
 ### Direct port access (recommended for external tools)
 
