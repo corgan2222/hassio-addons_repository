@@ -1,3 +1,14 @@
+## v13.0.1 (2026-04-30)
+
+#  Grafana 13.0.1 Enterprise
+## What's changed
+
+- Update to latest Grafana 13.0.1 Enterprise
+- switch to up2date grafana cli
+- remove Ports and switch to host_network
+- set default for ssl to false
+- Add documentation
+
 #  Grafana 13.0.1 Enterprise
 ## What's changed
 
