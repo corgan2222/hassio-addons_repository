@@ -106,6 +106,45 @@ documentation:
 
 **Note**: _Only environment variables starting with `GF_` are accepted.\_
 
+## Direct Port Access (for external tools & MCP servers)
+
+This addon runs with `host_network: true`, which means Grafana is directly
+accessible on port `3000` of your Home Assistant host — no ingress proxy
+required. This is useful for connecting external tools such as MCP servers,
+Grafana CLI, or any application that cannot authenticate through the HA ingress.
+
+**You must choose one access mode — you cannot use both simultaneously:**
+
+| Mode | Direct port (`http://IP:3000`) | HA Sidebar (Ingress) |
+|---|---|---|
+| Direct | ✓ | ✗ |
+| Ingress | ✗ (redirects to subpath) | ✓ |
+
+### Direct port access (recommended for external tools)
+
+Set the following `env_vars` in the add-on configuration, replacing
+`192.168.2.x` with your Home Assistant host IP:
+
+```yaml
+env_vars:
+  - name: GF_SERVER_ROOT_URL
+    value: "http://192.168.2.x:3000/"
+  - name: GF_SERVER_SERVE_FROM_SUB_PATH
+    value: "false"
+  - name: GF_SECURITY_CSRF_TRUSTED_ORIGINS
+    value: "192.168.2.x"
+```
+
+After restarting the addon, Grafana is available at `http://192.168.2.x:3000/`
+directly. The HA sidebar panel will no longer work in this mode — bookmark the
+direct URL instead.
+
+### Ingress-only access (default)
+
+Do not set `GF_SERVER_ROOT_URL`. The init script automatically configures
+Grafana with the correct HA ingress subpath. The HA sidebar panel works, but
+port 3000 redirects to the ingress subpath and cannot be used by external tools.
+
 ## Anonymous Access
 
 Anonymous access on a local network is possible by exposing the port in the
