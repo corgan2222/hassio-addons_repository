@@ -9,6 +9,13 @@ on:
 permissions:
   contents: read
 
+# A stable release dispatches both "stable" and "beta" into this same store
+# repo, so two update events arrive almost simultaneously. Serialize them so
+# they don't race on the master push (the second waits for the first).
+concurrency:
+  group: repository-updater
+  cancel-in-progress: false
+
 jobs:
   workflows:
     uses: hassio-addons/workflows/.github/workflows/repository-updater.yaml@3846ae0fd09acec8ac1ac308ceacd052b9d01bec # v2.0.6
@@ -21,6 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      added: ${{ steps.prepend.outputs.added }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -29,15 +38,18 @@ jobs:
           ref: master
 
       - name: Pull latest (updater may have pushed a commit)
-        run: git pull --rebase
+        run: git pull --rebase --autostash
 
       - name: Prepend changelog entry
+        id: prepend
         env:
           GH_TOKEN: ${{ secrets.UPDATER_TOKEN }}
           VERSION: ${{ github.event.client_payload.version }}
           REPOSITORY: ${{ github.event.client_payload.repository }}
           ADDON: ${{ github.event.client_payload.app }}
         run: |
+          echo "added=false" >> "$GITHUB_OUTPUT"
+
           # Skip if VERSION is a git SHA (edge builds) rather than a release tag
           if [[ ! "${VERSION}" =~ ^v[0-9] ]]; then
             echo "Version '${VERSION}' is not a release tag, skipping changelog."
@@ -45,20 +57,33 @@ jobs:
           fi
 
           CHANGELOG="${ADDON}/CHANGELOG.md"
+
+          # Idempotent: the stable + beta dispatches both land here, so skip if
+          # this version's entry already exists (prevents duplicate entries).
+          if [[ -f "${CHANGELOG}" ]] && grep -qF "## ${VERSION} (" "${CHANGELOG}"; then
+            echo "Changelog already contains ${VERSION}, skipping."
+            exit 0
+          fi
+
           DATE=$(date +%Y-%m-%d)
 
           # Fetch release notes from the addon repo
           NOTES=$(gh api "repos/${REPOSITORY}/releases/tags/${VERSION}" --jq '.body // ""')
 
-          # Build new entry
-          ENTRY="## ${VERSION} (${DATE})\n\n${NOTES}\n\n"
-
-          # Prepend entry to existing changelog
+          # Prepend the new entry. printf '%s' keeps the release notes literal
+          # (never interpreted as a printf format string).
           TMP=$(mktemp)
-          printf "%s\n\n%s" "$(printf "$ENTRY")" "$(cat "$CHANGELOG")" > "$TMP"
-          mv "$TMP" "$CHANGELOG"
+          {
+            printf '## %s (%s)\n\n' "${VERSION}" "${DATE}"
+            printf '%s\n\n' "${NOTES}"
+            [[ -f "${CHANGELOG}" ]] && cat "${CHANGELOG}"
+          } > "${TMP}"
+          mv "${TMP}" "${CHANGELOG}"
+
+          echo "added=true" >> "$GITHUB_OUTPUT"
 
       - name: Commit changelog
+        if: steps.prepend.outputs.added == 'true'
         env:
           VERSION: ${{ github.event.client_payload.version }}
           ADDON: ${{ github.event.client_payload.app }}
@@ -71,7 +96,8 @@ jobs:
 
   announce:
     name: Announce app update
-    needs: workflows
+    needs: [workflows, changelog]
+    if: needs.changelog.outputs.added == 'true'
     runs-on: ubuntu-latest
     permissions: {}
     steps:
