@@ -1,18 +1,14 @@
-# Home Assistant Community Add-on: EMQX
+# Home Assistant Community Add-on: EMQX Enterprise
 
 [![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
+[![License][license-shield]][license] [![EMQX Version][emqx-version-shield]][emqx-releases] [![GitHub Actions][github-actions-shield]][github-actions]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
-
-[![Support Frenck on Patreon][patreon-shield]][patreon]
-
-The most scalable open-source MQTT broker for IoT, IIoT, and connected vehicles.
+The most scalable MQTT broker for IoT, IIoT, and connected vehicles — the **Enterprise Edition**, fully local and self-hosted.
 
 ## About
 
-[EMQX][emqx] is an Open-source MQTT broker with a high-performance real-time
+[EMQX][emqx] is an MQTT broker with a high-performance real-time
 message processing engine, powering event streaming for IoT devices at massive
 scale. As the most scalable MQTT broker, EMQX can help you connect any device,
 at any scale (including your home).
@@ -21,22 +17,20 @@ The [EMQX MQTT broker][emqx] is an advanced alternative to the Mosquitto MQTT
 broker/add-on that is generally used in Home Assistant. It has a UI
 to configure, manage, and debug your MQTT broker, clients, and traffic.
 
-While EMQX sells their product mainly as a cloud hosted product on their
-website, this add-on runs EMQX in a fully local, self-hosted environment.
+This add-on runs the **EMQX Enterprise Edition** in a fully local,
+self-hosted environment on your Home Assistant instance.
 
 ![EMQX in the Home Assistant Frontend][screenshot]
 
-[discord-shield]: https://img.shields.io/discord/478094546522079232.svg
-[discord]: https://discord.me/hassioaddons
 [emqx]: https://www.emqx.io/
-[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/?u=frenck
-[github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
-[github-sponsors]: https://github.com/sponsors/frenck
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
-[patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
-[patreon]: https://www.patreon.com/frenck
+[emqx-releases]: https://github.com/emqx/emqx/releases/
+[emqx-version-shield]: https://img.shields.io/badge/EMQX-e5.10.4-blue.svg
+[github-actions]: https://github.com/corgan2222/addon-emqx/actions
+[github-actions-shield]: https://github.com/corgan2222/addon-emqx/actions/workflows/ci.yaml/badge.svg
+[license]: https://github.com/corgan2222/addon-emqx/blob/main/LICENSE.md
+[license-shield]: https://img.shields.io/github/license/corgan2222/addon-emqx.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v0.8.4-blue.svg
-[release]: https://github.com/corgan2222/addon-emqx/tree/v0.8.4
+[release-shield]: https://img.shields.io/badge/version-0.8.4-blue.svg
+[release]: https://github.com/corgan2222/addon-emqx/tree/0.8.4
 [screenshot]: https://github.com/corgan2222/addon-emqx/raw/main/images/screenshot.png
